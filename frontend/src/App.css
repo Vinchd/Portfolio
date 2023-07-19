@@ -23,16 +23,16 @@
 \* ______________________________________________________________________ */
 
 @layer base {
-  * {
+  /* * {
     box-shadow: 0 0 0 3px red inset;
-  }
+  } */
   /* header,
   main,
   footer {
     box-shadow: 0 0 0 3px red inset;
   } */
   body {
-    background-color: theme("colors.tertiary");
+    background-color: theme("colors.primary");
     color: theme("colors.secondary");
     font-family: theme("fontFamily.sans");
     font-size: theme("fontSize.sm");
@@ -73,6 +73,20 @@
 \* ______________________________________________________________________ */
 @layer components {
   /* Start Connect component  */
+  text {
+    cursor: pointer;
+  }
+
+  .header {
+    box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+    -webkit-box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+    -moz-box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+  }
+  .nav {
+    box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+    -webkit-box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+    -moz-box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+  }
   /* rect {
     fill: none;
     stroke: none;
