@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ______________________________________________________________________ *\
+   Import Local Fonts
+\* ______________________________________________________________________ */
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+}
+
+/* ______________________________________________________________________ *\
+   Base
+\* ______________________________________________________________________ */
+
+@layer base {
+  body {
+    color: theme("colors.default");
+    font-family: theme("fontFamily.sans");
+    font-size: theme("fontSize.sm");
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 80px 0 32px 0;
+    margin-inline: clamp(24px, 7.5vw, 192px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media screen and (min-width: theme("screens.md")) {
+      padding-top: 32px;
+    }
+
+    @media screen and (min-width: theme("screens.xl")) {
+      margin-inline: clamp(192px, 7.5vw, 288px);
+    }
+
+    @media screen and (min-width: theme("screens.2xl")) {
+      margin-inline: clamp(288px, 20vw, 576px);
+    }
+  }
+
+  h1 {
+    font-size: theme("fontSize.2xl");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: theme("fontSize.xl");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: theme("fontSize.lg");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: theme("fontSize.base");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  p {
+    font-size: theme("fontSize.sm");
+    font-family: theme("fontFamily.sans");
+  }
+}
+
+/* ______________________________________________________________________ *\
+   Components
+\* ______________________________________________________________________ */
+@layer components {
+  /* Start Connect component  */
+
+  /* End Connect component  */
+}
+
+@layer utilities {
+}
