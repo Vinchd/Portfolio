@@ -7,6 +7,8 @@ export default {
         primary: "#010409",
         secondary: "#E6EDF3",
         tertiary: "#0D1117",
+        link: "#2F81F7",
+        button: "#238636",
       },
 
       fontFamily: {
