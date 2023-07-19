@@ -23,34 +23,19 @@
 \* ______________________________________________________________________ */
 
 @layer base {
+  * {
+    box-shadow: 0 0 0 3px red inset;
+  }
+  /* header,
+  main,
+  footer {
+    box-shadow: 0 0 0 3px red inset;
+  } */
   body {
-    color: theme("colors.default");
+    background-color: theme("colors.tertiary");
+    color: theme("colors.secondary");
     font-family: theme("fontFamily.sans");
     font-size: theme("fontSize.sm");
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding: 80px 0 32px 0;
-    margin-inline: clamp(24px, 7.5vw, 192px);
-
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-
-    @media screen and (min-width: theme("screens.md")) {
-      padding-top: 32px;
-    }
-
-    @media screen and (min-width: theme("screens.xl")) {
-      margin-inline: clamp(192px, 7.5vw, 288px);
-    }
-
-    @media screen and (min-width: theme("screens.2xl")) {
-      margin-inline: clamp(288px, 20vw, 576px);
-    }
   }
 
   h1 {
@@ -88,7 +73,10 @@
 \* ______________________________________________________________________ */
 @layer components {
   /* Start Connect component  */
-
+  /* rect {
+    fill: none;
+    stroke: none;
+  } */
   /* End Connect component  */
 }
 
