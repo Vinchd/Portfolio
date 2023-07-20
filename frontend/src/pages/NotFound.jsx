@@ -6,7 +6,7 @@ export default function NotFound() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="flex w-full flex-[1] items-center justify-center px-10 md:min-h-[calc(100dvh-136px)]">
+      <section className="flex w-full flex-[1] items-center justify-center px-10 sm:min-h-[calc(100dvh-136px)]">
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <div className="not-found-text">
             <p className="text-lg font-extrabold md:text-2xl">
@@ -26,7 +26,7 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

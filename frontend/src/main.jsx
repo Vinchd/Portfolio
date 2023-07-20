@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import App from "./App";
 
 // Style
-import "./App.css";
+import "./App.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
