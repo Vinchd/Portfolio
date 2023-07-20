@@ -24,7 +24,7 @@ router.post("/login", getUserByEmailWithPasswordAndPassToNext, verifyPassword);
 router.get("/logout", userController.logoutUser);
 
 // authentication wall : verifyToken is activated for each route after this line
-router.use(verifyToken);
+// router.use(verifyToken);
 
 /**
  * FILE UPLOAD ROUTING
@@ -52,14 +52,15 @@ router.post("/upload_files", upload.array("files"), (req, res) => {
 /**
  * ADMIN ROUTING
  */
-router.get("/users", userController.getAllUsers);
+router.get("/user", userController.getAllUsers);
+router.get("/user/:id", userController.getOneUser);
 router.post(
-  "/users",
+  "/user",
   validateUser,
   addOnlyIfNotAlreadyExists,
   hashPassword,
   userController.postUser
 );
-router.delete("/users/:id", userController.deleteUser);
+router.delete("/user/:id", userController.deleteUser);
 
 export default router;
