@@ -14,9 +14,9 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="flex h-full items-center justify-center pt-24 sm:h-[calc(100vh-96px)] sm:pt-0">
+      <main className="flex h-full items-center justify-center pt-24 lg:h-[calc(100vh-96px)] lg:pt-0">
         <NavBar />
-        <div className="mt-6 flex flex-[2] flex-col items-center justify-center px-6 sm:min-h-[calc(100dvh-136px)] md:mt-0">
+        <div className="mt-6 flex flex-[2] flex-col items-center justify-center px-6 lg:min-h-[calc(100dvh-136px)] lg:mt-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />

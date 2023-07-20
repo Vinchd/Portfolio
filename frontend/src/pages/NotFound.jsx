@@ -6,10 +6,10 @@ export default function NotFound() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="flex w-full flex-[1] items-center justify-center px-10 sm:min-h-[calc(100dvh-136px)]">
-        <div className="flex flex-col items-center gap-6 md:flex-row">
+      <section className="flex w-full flex-[1] items-center justify-center px-10 lg:min-h-[calc(100dvh-136px)]">
+        <div className="flex flex-col items-center gap-6 lg:flex-row">
           <div className="not-found-text">
-            <p className="text-lg font-extrabold md:text-2xl">
+            <p className="text-lg font-extrabold lg:text-2xl">
               La page que vous recherchez n'a pu être trouvée
             </p>
             <p>

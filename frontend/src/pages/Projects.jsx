@@ -45,8 +45,8 @@ export default function Projects() {
 
   console.log(projects);
   return (
-    <section className="flex w-full flex-[1] flex-col items-center justify-center sm:min-h-[calc(100dvh-136px)]">
-      <div className="container flex flex-col sm:flex-row md:h-[500px] ">
+    <section className="flex w-full flex-[1] flex-col items-center justify-center lg:min-h-[calc(100dvh-136px)]">
+      <div className="container flex flex-col lg:h-[500px] lg:flex-row ">
         {projects.map((project) => (
           <div
             key={project.name}

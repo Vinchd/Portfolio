@@ -18,7 +18,7 @@ export default function NavBar() {
         color: "#E6EDF3",
       },
     },
-    colors: ["#354f78", "#238636", "#7699cf", "#565554", "#D81159"],
+    colors: ["#415575", "#238636", "#7699cf", "#565554", "#D81159"],
   });
   const options = {
     author: " ",
