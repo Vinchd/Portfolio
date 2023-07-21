@@ -7,6 +7,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="flex flex-col items-center justify-center gap-3 px-6 py-3 md:h-10 md:flex-row md:justify-between md:px-12 md:py-4"></footer>
+    <footer className="flex w-full flex-col items-center justify-center gap-3 px-12 py-3 text-2xs opacity-50 lg:h-10 lg:flex-row lg:justify-end lg:py-4">
+      &copy; {currentYear} Vincent Daviaud
+    </footer>
   );
 }

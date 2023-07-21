@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ______________________________________________________________________ *\
+   Import Local Fonts
+\* ______________________________________________________________________ */
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+}
+
+/* ______________________________________________________________________ *\
+   Base
+\* ______________________________________________________________________ */
+
+@layer base {
+  // * {
+  //   box-shadow: 0 0 0 3px red inset;
+  // }
+  /* header,
+  main,
+  footer {
+    box-shadow: 0 0 0 3px red inset;
+  } */
+  body {
+    background-color: theme("colors.primary");
+    color: theme("colors.secondary");
+    font-family: theme("fontFamily.sans");
+    font-size: theme("fontSize.sm");
+  }
+
+  h1 {
+    font-size: theme("fontSize.2xl");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: theme("fontSize.xl");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: theme("fontSize.lg");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: theme("fontSize.base");
+    font-family: theme("fontFamily.sans");
+    font-weight: 600;
+  }
+
+  p {
+    font-size: theme("fontSize.sm");
+    font-family: theme("fontFamily.sans");
+  }
+}
+
+/* ______________________________________________________________________ *\
+   Components
+\* ______________________________________________________________________ */
+@layer components {
+  /* Start Connect component  */
+  text {
+    cursor: pointer;
+  }
+
+  .header {
+    box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+    -webkit-box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+    -moz-box-shadow: 0px -2px 1px -2px rgba(230, 237, 243, 1) inset;
+  }
+  .nav {
+    box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+    -webkit-box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+    -moz-box-shadow: -2px -1px 1px -2px rgba(230, 237, 243, 1) inset;
+  }
+
+  footer {
+    rect {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+
+    > .project-card {
+      flex: 0 0 120px;
+      border-radius: 0.2rem;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      box-shadow: 1px 5px 15px theme("colors.tertiary");
+      position: relative;
+      overflow: hidden;
+
+      .content {
+        color: theme("colors.secondary");
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        opacity: 0;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        background: theme("colors.tertiary");
+        background: linear-gradient(
+          0deg,
+          rgba(1, 4, 9, 0.6755077030812324) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: translatey(100%);
+        transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+        visibility: hidden;
+
+        span {
+          display: block;
+          margin-top: 5px;
+          font-size: 1.2rem;
+        }
+      }
+
+      &:hover {
+        flex: 0 0 250px;
+        box-shadow: 1px 3px 15px rgb(43, 47, 63);
+        transform: translatey(-30px);
+      }
+
+      &:hover .content {
+        opacity: 1;
+        transform: translatey(0%);
+        visibility: visible;
+      }
+    }
+  }
+
+  /* End Connect component  */
+}
+
+@layer utilities {
+}

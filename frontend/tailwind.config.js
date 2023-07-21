@@ -4,13 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#00ACB0",
-        secondary: "#E62460",
-        tertiary: "#FFCC38",
-        default: "#002743",
-        neutral: "#EBEBEB",
-        neutralDark: "#000000",
-        neutralLight: "#F9F9F9",
+        primary: "#010409",
+        secondary: "#E6EDF3",
+        tertiary: "#0D1117",
+        link: "#2F81F7",
+        button: "#238636",
       },
 
       fontFamily: {
