@@ -50,7 +50,6 @@ export default function Projects() {
             key={project.name}
             className="project-card"
             style={{
-              backgroundImage: `url("/assets/icons/${project.image}")`,
               backgroundImage: `url(${
                 import.meta.env.VITE_BACKEND_URL
               }/uploads/${project.image})`,
