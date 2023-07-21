@@ -1,43 +1,39 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     const fakedata = [
       {
-        name: "Projet 1",
+        name: "Ravenfeed",
         resume: "Minigame",
-        image:
-          "https://images.pexels.com/photos/17568716/pexels-photo-17568716/free-photo-of-new-york.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        image: "thumbnail_ravenfeed.png",
         link: "https://www.google.fr/",
       },
       {
-        name: "Projet 2",
+        name: "Blurtest",
         resume: "SocialMedia",
-        image:
-          "https://images.pexels.com/photos/16745025/pexels-photo-16745025/free-photo-of-ville-monument-building-fenetres.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        image: "thumbnail_blurtest.png",
         link: "https://www.instagram.com/",
       },
       {
-        name: "Projet 3",
+        name: "Choîxteau",
         resume: "Support",
-        image:
-          "https://images.pexels.com/photos/16971317/pexels-photo-16971317/free-photo-of-femme-robe-grand-monument.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        image: "thumbnail_choixteau.png",
         link: "https://www.youtube.com/",
       },
       {
-        name: "Hackathon",
+        name: "Emmaus Connect",
         resume: "SpeedRun",
-        image:
-          "https://images.pexels.com/photos/17530670/pexels-photo-17530670/free-photo-of-lumineux-ville-aube-soleil-couchant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        link: "https://www.youtube.com/",
+        image: "thumbnail_emmausconnect.png",
+        link: "https://odyssey.wildcodeschool.com/",
       },
       {
-        name: "Hackathon 2",
+        name: "Inovin",
         resume: "Support",
-        image:
-          "https://images.pexels.com/photos/17494608/pexels-photo-17494608/free-photo-of-mer-plage-vacances-eau.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        link: "https://www.youtube.com/",
+        image: "thumbnail_inovin.png",
+        link: "https://tailwindcss.com/",
       },
     ];
     setProjects(fakedata);
@@ -45,15 +41,19 @@ export default function Projects() {
 
   console.log(projects);
   return (
-    <section className="flex w-full flex-[1] flex-col items-center justify-center lg:min-h-[calc(100dvh-136px)]">
+    <section className="flex w-full flex-[1] flex-col items-center justify-center gap-12 lg:min-h-[calc(100dvh-136px)]">
+      <h2>Projets</h2>
       <div className="container flex flex-col lg:h-[500px] lg:flex-row ">
         {projects.map((project) => (
-          <div
+          <Link
+            to={`${project.link}`}
             key={project.name}
             className="project-card"
             style={{
-              backgroundImage: `url(${project.image})`,
-              backgroundRepeat: "no-repeat",
+              backgroundImage: `url("/assets/icons/${project.image}")`,
+              backgroundImage: `url(${
+                import.meta.env.VITE_BACKEND_URL
+              }/uploads/${project.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -62,7 +62,7 @@ export default function Projects() {
               <h2>{project.name}</h2>
               <span>{project.resume}</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
