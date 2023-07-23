@@ -48,7 +48,7 @@ export default function Cv() {
 
   return (
     <section id="cv" className="scroll-area">
-      <div className="box flex w-[60%] min-w-fit flex-col items-center justify-center gap-3 bg-tertiary py-3 lg:max-h-[calc(100dvh-226px)] lg:min-h-[calc(100dvh-226px)]">
+      <div className="box flex w-[60%] min-w-fit flex-col items-center justify-center gap-3 py-3 lg:max-h-[calc(100dvh-226px)] lg:min-h-[calc(100dvh-226px)]">
         <div style={iframeContainerStyle}>
           <iframe
             loading="lazy"

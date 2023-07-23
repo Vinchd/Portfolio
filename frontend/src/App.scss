@@ -89,6 +89,30 @@
     outline-offset: 0px;
   }
 
+  .btn:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+  }
+  .btn:active {
+    background-color: #282e33;
+    border-color: #6e7681;
+  }
+
+  .input {
+    background-color: theme("colors.primary");
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid;
+    border-color: rgba(240, 246, 252, 0.2);
+  }
+
+  .input:focus {
+    outline: 2px solid #2f81f7;
+
+    background-color: theme("colors.tertiary");
+  }
+
   text {
     cursor: pointer;
   }
@@ -105,6 +129,7 @@
     border-style: solid;
     border-color: #30363d;
     border-width: max(1px, 0.0625rem);
+    background-color: theme("colors.tertiary");
   }
 
   footer {
@@ -187,6 +212,12 @@
     align-items: center;
     justify-content: center;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    .scroll-area {
+      padding: 6rem 0 6rem 0;
+    }
   }
 
   section {
