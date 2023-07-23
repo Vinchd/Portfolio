@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { Gitgraph, templateExtend, TemplateName } from "@gitgraph/react";
 
 export default function NavBar() {
-  const navigate = useNavigate();
-
   const withoutHash = templateExtend(TemplateName.Metro, {
     branch: {
       label: {
@@ -23,15 +20,19 @@ export default function NavBar() {
   const options = {
     author: " ",
     template: withoutHash,
+    orientation: "vertical-reverse",
   };
 
-  const handleClick = (page) => {
-    navigate(`/${page}`);
+  const handleClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <nav className="nav hidden h-full max-w-[320px] flex-[1] flex-col items-center justify-center bg-tertiary lg:flex">
-      {/* <Gitgraph options={options} className="hidden">
+    <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center justify-center bg-tertiary lg:flex">
+      <Gitgraph options={options}>
         {(gitgraph) => {
           const mainBranch = gitgraph.branch("main");
           mainBranch.commit("");
@@ -39,105 +40,68 @@ export default function NavBar() {
 
           devBranch.commit("");
           const featureBranch = gitgraph.branch("feature");
-          featureBranch
-            .commit({
-              subject: "Contact",
-              onMessageClick() {
-                handleClick("contact");
-              },
-            })
-            .commit({
-              subject: "Mon CV",
-              onMessageClick() {
-                handleClick("cv");
-              },
-            })
-            .commit({
-              subject: "Accueil",
-              onMessageClick() {
-                handleClick("");
-              },
-            });
+          featureBranch.commit({
+            subject: "Accueil",
+            onMessageClick() {
+              handleClick("home");
+            },
+          });
+          devBranch.commit({
+            subject: "Projets",
+            onMessageClick() {
+              handleClick("projects");
+            },
+          });
+          featureBranch.commit({
+            subject: "Mon CV",
+            onMessageClick() {
+              handleClick("cv");
+            },
+          });
+          featureBranch.commit({
+            subject: "Contact",
+            onMessageClick() {
+              handleClick("contact");
+            },
+          });
+          // devBranch.merge(featureBranch, "zzz ");
+
           devBranch.merge(featureBranch, " ");
-
           mainBranch.merge(devBranch, " ");
+
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
+          mainBranch.commit("");
         }}
-      </Gitgraph> */}
-      {window.innerHeight > 790 ? (
-        <Gitgraph options={options}>
-          {(gitgraph) => {
-            const mainBranch = gitgraph.branch("main");
-            mainBranch.commit("");
-            const devBranch = gitgraph.branch("dev");
-
-            devBranch.commit("");
-            const featureBranch = gitgraph.branch("feature");
-            featureBranch.commit({
-              subject: "Contact",
-              onMessageClick() {
-                handleClick("contact");
-              },
-            });
-            // devBranch.merge(featureBranch, "zzz ");
-
-            featureBranch.commit({
-              subject: "Mon CV",
-              onMessageClick() {
-                handleClick("cv");
-              },
-            });
-            devBranch.commit({
-              subject: "Projets",
-              onMessageClick() {
-                handleClick("projects");
-              },
-            });
-
-            featureBranch.commit({
-              subject: "Accueil",
-              onMessageClick() {
-                handleClick("");
-              },
-            });
-            devBranch.merge(featureBranch, " ");
-
-            mainBranch.merge(devBranch, " ");
-          }}
-        </Gitgraph>
-      ) : (
-        <Gitgraph options={options}>
-          {(gitgraph) => {
-            const mainBranch = gitgraph.branch("main");
-            mainBranch.commit("");
-            const devBranch = gitgraph.branch("dev");
-
-            devBranch.commit("");
-            const featureBranch = gitgraph.branch("feature");
-            featureBranch
-              .commit({
-                subject: "Contact",
-                onMessageClick() {
-                  handleClick("contact");
-                },
-              })
-              .commit({
-                subject: "Mon CV",
-                onMessageClick() {
-                  handleClick("cv");
-                },
-              })
-              .commit({
-                subject: "Accueil",
-                onMessageClick() {
-                  handleClick("");
-                },
-              });
-            devBranch.merge(featureBranch, " ");
-
-            mainBranch.merge(devBranch, " ");
-          }}
-        </Gitgraph>
-      )}
+      </Gitgraph>
     </nav>
   );
 }

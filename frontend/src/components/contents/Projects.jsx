@@ -7,33 +7,33 @@ export default function Projects() {
     const fakedata = [
       {
         name: "Ravenfeed",
-        resume: "Minigame",
+        resume: "Socialmedia",
         image: "thumbnail_ravenfeed.png",
-        link: "https://www.google.fr/",
+        link: "https://github.com/Vinchd/Projet1_Ravenclaw",
       },
       {
         name: "Blurtest",
-        resume: "SocialMedia",
+        resume: "Minigame",
         image: "thumbnail_blurtest.png",
-        link: "https://www.instagram.com/",
+        link: "https://blurtest.remote-fr-2.wilders.dev/",
       },
       {
         name: "Choîxteau",
-        resume: "Support",
+        resume: "Travel",
         image: "thumbnail_choixteau.png",
-        link: "https://www.youtube.com/",
+        link: "https://choixteau.netlify.app/",
       },
       {
         name: "Emmaus Connect",
-        resume: "SpeedRun",
+        resume: "Support",
         image: "thumbnail_emmausconnect.png",
-        link: "https://odyssey.wildcodeschool.com/",
+        link: "https://github.com/Vinchd/Hackaton-2",
       },
       {
         name: "Inovin",
         resume: "Support",
         image: "thumbnail_inovin.png",
-        link: "https://tailwindcss.com/",
+        link: "https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P3-Team-Slytherin",
       },
     ];
     setProjects(fakedata);
@@ -41,7 +41,7 @@ export default function Projects() {
 
   console.log(projects);
   return (
-    <section className="flex w-full flex-[1] flex-col items-center justify-center gap-12 lg:min-h-[calc(100dvh-136px)]">
+    <section id="projects" className="scroll-area">
       <h2>Projets</h2>
       <div className="container flex flex-col lg:h-[500px] lg:flex-row ">
         {projects.map((project) => (
@@ -49,6 +49,7 @@ export default function Projects() {
             to={`${project.link}`}
             key={project.name}
             className="project-card"
+            target="_blank"
             style={{
               backgroundImage: `url(${
                 import.meta.env.VITE_BACKEND_URL
