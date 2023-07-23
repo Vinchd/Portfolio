@@ -1,4 +1,5 @@
 import { Gitgraph, templateExtend, TemplateName } from "@gitgraph/react";
+import React, { useEffect, useState } from "react";
 
 export default function NavBar() {
   const withoutHash = templateExtend(TemplateName.Metro, {
@@ -29,6 +30,19 @@ export default function NavBar() {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center justify-center bg-tertiary lg:flex">
@@ -69,8 +83,6 @@ export default function NavBar() {
           devBranch.merge(featureBranch, " ");
           mainBranch.merge(devBranch, " ");
 
-          mainBranch.commit("");
-          mainBranch.commit("");
           mainBranch.commit("");
           mainBranch.commit("");
           mainBranch.commit("");
