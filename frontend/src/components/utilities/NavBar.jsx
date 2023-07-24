@@ -15,6 +15,7 @@ export default function NavBar() {
         font: "normal 14pt Poppins",
         color: "#E6EDF3",
       },
+      // spacing: 60,
     },
     colors: ["#415575", "#238636", "#7699cf", "#565554", "#D81159"],
   });

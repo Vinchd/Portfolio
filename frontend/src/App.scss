@@ -23,9 +23,9 @@
 \* ______________________________________________________________________ */
 
 @layer base {
-  // * {
-  //   box-shadow: 0 0 0 3px red inset;
-  // }
+  * {
+    box-shadow: 0 0 0 3px red inset;
+  }
   // header,
   // main,
   // footer {
@@ -105,6 +105,7 @@
     border-radius: 6px;
     border: 1px solid;
     border-color: rgba(240, 246, 252, 0.2);
+    resize: none;
   }
 
   .input:focus {
@@ -197,14 +198,15 @@
 
   .scroll-container {
     max-width: 100%;
-    height: calc(100vh - 96px);
-    font-size: 20px;
+    min-height: calc(100vh - 96px);
+    max-height: calc(100vh - 96px);
     overflow: auto;
     scroll-snap-type: y mandatory;
   }
 
   .scroll-area {
     min-height: calc(100vh - 96px);
+    max-height: calc(100vh - 96px);
     width: 100%;
     padding: 6rem;
     scroll-snap-align: start;
