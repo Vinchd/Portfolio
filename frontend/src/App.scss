@@ -23,9 +23,9 @@
 \* ______________________________________________________________________ */
 
 @layer base {
-  * {
-    box-shadow: 0 0 0 3px red inset;
-  }
+  // * {
+  //   box-shadow: 0 0 0 3px red inset;
+  // }
   // header,
   // main,
   // footer {
@@ -198,15 +198,15 @@
 
   .scroll-container {
     max-width: 100%;
-    min-height: calc(100vh - 96px);
-    max-height: calc(100vh - 96px);
+    min-height: calc(100dvh - 95px);
+    max-height: calc(100dvh - 95px);
     overflow: auto;
     scroll-snap-type: y mandatory;
   }
 
   .scroll-area {
-    min-height: calc(100vh - 96px);
-    max-height: calc(100vh - 96px);
+    min-height: calc(100dvh - 95px);
+    max-height: calc(100dvh - 95px);
     width: 100%;
     padding: 6rem;
     scroll-snap-align: start;
@@ -224,7 +224,6 @@
 
   section {
     display: flex;
-    // height: calc(100vh - 96px);
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -279,6 +278,15 @@
     background: #21262d;
   }
 
+  nav svg:nth-of-type(2) {
+    transform: translateY(-42px);
+  }
+  nav svg:nth-of-type(3) {
+    transform: translateY(-84px);
+  }
+  nav svg:nth-of-type(4) {
+    transform: translateY(-126px);
+  }
   /* End Connect component  */
 }
 

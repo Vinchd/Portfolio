@@ -2,11 +2,7 @@ import { Gitgraph, templateExtend, TemplateName } from "@gitgraph/react";
 import React, { useEffect, useState } from "react";
 
 export default function NavBar() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [value, setValue] = useState(81);
-  const [graphKey, setGraphKey] = useState(0);
-
   const withoutHash = templateExtend(TemplateName.Metro, {
     branch: {
       label: {
@@ -20,7 +16,7 @@ export default function NavBar() {
         font: "normal 14pt Poppins",
         color: "#E6EDF3",
       },
-      spacing: value,
+      spacing: 81,
     },
     colors: ["#415575", "#238636", "#7699cf", "#565554", "#D81159"],
   });
@@ -37,36 +33,45 @@ export default function NavBar() {
     }
   };
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
-    let timeoutId;
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      const newHeight = window.innerHeight;
-      setWindowHeight(newHeight);
-      if (newHeight > 690 && newHeight < 700) {
-        setGraphKey((prevKey) => prevKey + 1);
-        setValue(40);
-      }
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        if (window.innerHeight < 700) {
-          setGraphKey((prevKey) => prevKey + 1);
-        }
-      }, 100);
     };
 
     window.addEventListener("resize", handleResize);
-    window.addEventListener("load", handleResize);
 
     return () => {
-      clearTimeout(timeoutId);
       window.removeEventListener("resize", handleResize);
     };
-  }, [windowHeight]);
+  }, []);
 
   return (
-    <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center bg-tertiary lg:flex">
-      <Gitgraph key={graphKey} options={options}>
+    // <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center justify-center bg-tertiary lg:flex">
+    <nav className="nav ">
+      <Gitgraph
+        options={{
+          author: " ",
+          template: templateExtend(TemplateName.Metro, {
+            branch: {
+              label: {
+                display: false,
+              },
+            },
+            commit: {
+              message: {
+                displayHash: false,
+                displayAuthor: false,
+                font: "normal 14pt Poppins",
+                color: "#E6EDF3",
+              },
+              spacing: value,
+            },
+            colors: ["#415575", "#238636", "#7699cf", "#565554", "#D81159"],
+          }),
+          orientation: "vertical-reverse",
+        }}
+      >
         {(gitgraph) => {
           const mainBranch = gitgraph.branch("main");
           mainBranch.commit("");
@@ -106,7 +111,7 @@ export default function NavBar() {
           mainBranch.commit("");
         }}
       </Gitgraph>
-      {/* <Gitgraph options={options}>
+      <Gitgraph options={options}>
         {(gitgraph) => {
           const mainBranch = gitgraph.branch("main");
           mainBranch.commit("");
@@ -225,7 +230,7 @@ export default function NavBar() {
           devBranch.merge(featureBranch, " ");
           mainBranch.merge(devBranch, " ");
         }}
-      </Gitgraph> */}
+      </Gitgraph>
     </nav>
   );
 }
