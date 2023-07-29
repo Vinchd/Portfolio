@@ -31,43 +31,44 @@
   // footer {
   //   box-shadow: 0 0 0 3px red inset;
   // }
-  // section {
-  //   box-shadow: 0 0 0 3px red inset;
-  // }
+  section {
+    box-shadow: 0 0 0 3px red inset;
+  }
+
   body {
     background-color: theme("colors.primary");
     color: theme("colors.secondary");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
     font-size: theme("fontSize.sm");
   }
 
   h1 {
     font-size: theme("fontSize.2xl");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
     font-weight: 600;
   }
 
   h2 {
     font-size: theme("fontSize.xl");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
     font-weight: 600;
   }
 
   h3 {
     font-size: theme("fontSize.lg");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
     font-weight: 600;
   }
 
   h4 {
     font-size: theme("fontSize.base");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
     font-weight: 600;
   }
 
   p {
     font-size: theme("fontSize.sm");
-    font-family: theme("fontFamily.sans");
+    font-family: theme("fontFamily.sans"), system-ui, serif;
   }
 }
 
@@ -76,23 +77,22 @@
 \* ______________________________________________________________________ */
 @layer components {
   /* Start Connect component  */
-
   .btn {
     background-color: #21262d;
     color: #c9d1d9;
-    border: 1px solid;
-    border-color: rgba(240, 246, 252, 0.1);
+    border: 1px solid rgba(240, 246, 252, 0.1);
     border-radius: 6px;
     padding: 5px 16px;
     font-size: 14px;
     // outline: 1px solid #ffffff;
-    outline-offset: 0px;
+    outline-offset: 0;
   }
 
   .btn:hover {
     background-color: #30363d;
     border-color: #8b949e;
   }
+
   .btn:active {
     background-color: #282e33;
     border-color: #6e7681;
@@ -103,8 +103,7 @@
     padding: 5px 12px;
     font-size: 14px;
     border-radius: 6px;
-    border: 1px solid;
-    border-color: rgba(240, 246, 252, 0.2);
+    border: 1px solid rgba(240, 246, 252, 0.2);
     resize: none;
   }
 
@@ -122,9 +121,11 @@
     // box-shadow: inset 0 calc(1px * -1) #30363d;
     border-bottom: 1px solid #30363d;
   }
+
   .nav {
     border-right: 1px solid #30363d;
   }
+
   .box {
     border-radius: 6px;
     border-style: solid;
@@ -167,9 +168,9 @@
         justify-content: flex-end;
         background: theme("colors.tertiary");
         background: linear-gradient(
-          0deg,
-          rgba(1, 4, 9, 0.6755077030812324) 0%,
-          rgba(255, 255, 255, 0) 100%
+                    0deg,
+                    rgba(1, 4, 9, 0.6755077030812324) 0%,
+                    rgba(255, 255, 255, 0) 100%
         );
         transform: translatey(100%);
         transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
@@ -233,22 +234,26 @@
   .scroll-container {
     grid-template-columns: 350px calc(100% - 350px);
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
   }
 
   .scroll-container > .nav {
     grid-area: 1 / 1 / 5 / 2;
   }
+
   .scroll-container > .scroll-area:nth-child(2) {
     grid-area: 1 / 2 / 2 / 3;
   }
+
   .scroll-container > .scroll-area:nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
   }
+
   .scroll-container > .scroll-area:nth-child(4) {
     grid-area: 3 / 2 / 4 / 3;
   }
+
   .scroll-container > .scroll-area:nth-child(5) {
     grid-area: 4 / 2 / 5 / 3;
   }
@@ -281,12 +286,15 @@
   nav svg:nth-of-type(2) {
     transform: translateY(-42px);
   }
+
   nav svg:nth-of-type(3) {
     transform: translateY(-84px);
   }
+
   nav svg:nth-of-type(4) {
     transform: translateY(-126px);
   }
+
   /* End Connect component  */
 }
 
