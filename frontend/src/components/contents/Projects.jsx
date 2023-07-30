@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
@@ -48,7 +48,7 @@ export default function Projects() {
           <Link
             to={`${project.link}`}
             key={project.name}
-            className="project-card"
+            className="project-card max-h-[100px] md:max-h-none"
             target="_blank"
             style={{
               backgroundImage: `url(${
