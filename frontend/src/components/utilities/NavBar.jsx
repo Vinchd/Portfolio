@@ -1,5 +1,10 @@
-import { Gitgraph, templateExtend, TemplateName } from "@gitgraph/react";
+import { templateExtend, TemplateName } from "@gitgraph/react";
 import React, { useEffect, useState } from "react";
+import NavHome, {
+  NavContact,
+  NavCv,
+  NavProjects,
+} from "./datanavbar/DataNavBar.jsx";
 
 export default function NavBar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -46,7 +51,7 @@ export default function NavBar() {
       setWindowHeight(newHeight);
       if (newHeight > 690 && newHeight < 700) {
         setGraphKey((prevKey) => prevKey + 1);
-        setValue(40);
+        setValue(65);
       }
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -67,47 +72,22 @@ export default function NavBar() {
 
   return (
     <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center bg-tertiary lg:flex">
-      <Gitgraph key={graphKey} options={options}>
-        {(gitgraph) => {
-          const mainBranch = gitgraph.branch("main");
-          mainBranch.commit("");
-          mainBranch.commit("");
-          const devBranch = gitgraph.branch("dev");
-
-          devBranch.commit("");
-          const featureBranch = gitgraph.branch("feature");
-          featureBranch.commit({
-            subject: "Accueil",
-            onMessageClick() {
-              handleClick("home");
-            },
-          });
-          devBranch.commit({
-            subject: "Projets",
-            onMessageClick() {
-              handleClick("projects");
-            },
-          });
-          featureBranch.commit({
-            subject: "Mon CV",
-            onMessageClick() {
-              handleClick("cv");
-            },
-          });
-          featureBranch.commit({
-            subject: "Contact",
-            onMessageClick() {
-              handleClick("contact");
-            },
-          });
-          // devBranch.merge(featureBranch, "zzz ");
-          devBranch.merge(featureBranch, " ");
-          mainBranch.merge(devBranch, " ");
-
-          mainBranch.commit("");
-          mainBranch.commit("");
-        }}
-      </Gitgraph>
+      <NavHome
+        graphKey={graphKey}
+        options={options}
+        handleClick={handleClick}
+      />
+      <NavProjects
+        graphKey={graphKey}
+        options={options}
+        handleClick={handleClick}
+      />
+      <NavCv graphKey={graphKey} options={options} handleClick={handleClick} />
+      <NavContact
+        graphKey={graphKey}
+        options={options}
+        handleClick={handleClick}
+      />
       {/*<Gitgraph key={graphKey} options={options}>*/}
       {/*  {(gitgraph) => {*/}
       {/*    const mainBranch = gitgraph.branch("main");*/}
