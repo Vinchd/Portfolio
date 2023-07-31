@@ -78,8 +78,8 @@
 @layer components {
   /* Start Connect component  */
   .btn {
-    background-color: #21262d;
-    color: #c9d1d9;
+    background-color: #21262D;
+    color: #C9D1D9;
     border: 1px solid rgba(240, 246, 252, 0.1);
     border-radius: 6px;
     padding: 5px 16px;
@@ -89,13 +89,13 @@
   }
 
   .btn:hover {
-    background-color: #30363d;
-    border-color: #8b949e;
+    background-color: #30363D;
+    border-color: #8B949E;
   }
 
   .btn:active {
-    background-color: #282e33;
-    border-color: #6e7681;
+    background-color: #282E33;
+    border-color: #6E7681;
   }
 
   .input {
@@ -108,7 +108,7 @@
   }
 
   .input:focus {
-    outline: 2px solid #2f81f7;
+    outline: 2px solid #2F81F7;
 
     background-color: theme("colors.tertiary");
   }
@@ -119,17 +119,17 @@
 
   .header {
     // box-shadow: inset 0 calc(1px * -1) #30363d;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #30363D;
   }
 
   .nav {
-    border-right: 1px solid #30363d;
+    border-right: 1px solid #30363D;
   }
 
   .box {
     border-radius: 6px;
     border-style: solid;
-    border-color: #30363d;
+    border-color: #30363D;
     border-width: max(1px, 0.0625rem);
     background-color: theme("colors.tertiary");
   }
@@ -149,8 +149,8 @@
     gap: 10px;
 
     > .project-card {
-      flex: 0 0 120px;
-      border-radius: 0.2rem;
+      flex: 1;
+      border-radius: 6px;
       transition: 0.5s ease-in-out;
       cursor: pointer;
       box-shadow: 1px 5px 15px theme("colors.tertiary");
@@ -184,7 +184,7 @@
       }
 
       &:hover {
-        flex: 0 0 250px;
+        flex: 1.5;
         box-shadow: 1px 3px 15px rgb(43, 47, 63);
         transform: translatey(-30px);
       }
@@ -305,7 +305,7 @@
   ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #21262d;
+    background: #21262D;
   }
 
   nav svg:nth-of-type(2) {

@@ -39,9 +39,8 @@ export default function Projects() {
     setProjects(fakedata);
   }, []);
 
-  console.log(projects);
   return (
-    <section id="projects" className="scroll-area">
+    <section id="projects" className="scroll-area sm:gap-8">
       <h2>Projets</h2>
       <div className="container flex flex-col lg:h-[500px] lg:flex-row ">
         {projects.map((project) => (
