@@ -6,7 +6,7 @@ import NavHome, {
   NavProjects,
 } from "./datanavbar/DataNavBar.jsx";
 
-export default function NavBar() {
+export default function NavBar({ activeSection, center }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [value, setValue] = useState(81);
@@ -49,9 +49,21 @@ export default function NavBar() {
       setWindowWidth(window.innerWidth);
       const newHeight = window.innerHeight;
       setWindowHeight(newHeight);
-      if (newHeight > 690 && newHeight < 700) {
+      if (newHeight > 840 && newHeight < 860) {
         setGraphKey((prevKey) => prevKey + 1);
-        setValue(65);
+        setValue(70);
+      }
+      if (newHeight > 740 && newHeight < 760) {
+        setGraphKey((prevKey) => prevKey + 1);
+        setValue(60);
+      }
+      if (newHeight > 650 && newHeight < 670) {
+        setGraphKey((prevKey) => prevKey + 1);
+        setValue(50);
+      }
+      if (newHeight > 560 && newHeight < 580) {
+        setGraphKey((prevKey) => prevKey + 1);
+        setValue(44);
       }
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -71,143 +83,37 @@ export default function NavBar() {
   }, [windowHeight]);
 
   return (
-    <nav className="nav hidden h-full min-w-[350px] max-w-[350px] flex-col items-center bg-tertiary lg:flex">
-      <NavHome
-        graphKey={graphKey}
-        options={options}
-        handleClick={handleClick}
-      />
-      <NavProjects
-        graphKey={graphKey}
-        options={options}
-        handleClick={handleClick}
-      />
-      <NavCv graphKey={graphKey} options={options} handleClick={handleClick} />
-      <NavContact
-        graphKey={graphKey}
-        options={options}
-        handleClick={handleClick}
-      />
-      {/*<Gitgraph key={graphKey} options={options}>*/}
-      {/*  {(gitgraph) => {*/}
-      {/*    const mainBranch = gitgraph.branch("main");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*    const devBranch = gitgraph.branch("dev");*/}
-
-      {/*    devBranch.commit("");*/}
-      {/*    const featureBranch = gitgraph.branch("feature");*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Accueil",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("home");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    devBranch.commit({*/}
-      {/*      subject: "Projets",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("projects");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Mon CV",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("cv");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Contact",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("contact");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
-      {/*    devBranch.merge(featureBranch, " ");*/}
-      {/*    mainBranch.merge(devBranch, " ");*/}
-
-      {/*    mainBranch.commit("");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*  }}*/}
-      {/*</Gitgraph>*/}
-      {/*<Gitgraph options={options}>*/}
-      {/*  {(gitgraph) => {*/}
-      {/*    const mainBranch = gitgraph.branch("main");*/}
-      {/*    mainBranch.commit("");*/}
-
-      {/*    const devBranch = gitgraph.branch("dev");*/}
-
-      {/*    devBranch.commit("");*/}
-      {/*    const featureBranch = gitgraph.branch("feature");*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Accueil",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("home");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    devBranch.commit({*/}
-      {/*      subject: "Projets",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("projects");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Mon CV",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("cv");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Contact",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("contact");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
-      {/*    devBranch.merge(featureBranch, " ");*/}
-      {/*    mainBranch.merge(devBranch, " ");*/}
-
-      {/*    mainBranch.commit("");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*  }}*/}
-      {/*</Gitgraph>*/}
-      {/*<Gitgraph options={options}>*/}
-      {/*  {(gitgraph) => {*/}
-      {/*    const mainBranch = gitgraph.branch("main");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*    mainBranch.commit("");*/}
-      {/*    const devBranch = gitgraph.branch("dev");*/}
-
-      {/*    devBranch.commit("");*/}
-      {/*    const featureBranch = gitgraph.branch("feature");*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Accueil",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("home");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    devBranch.commit({*/}
-      {/*      subject: "Projets",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("projects");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Mon CV",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("cv");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    featureBranch.commit({*/}
-      {/*      subject: "Contact",*/}
-      {/*      onMessageClick() {*/}
-      {/*        handleClick("contact");*/}
-      {/*      },*/}
-      {/*    });*/}
-      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
-      {/*    devBranch.merge(featureBranch, " ");*/}
-      {/*    mainBranch.merge(devBranch, " ");*/}
-      {/*  }}*/}
-      {/*</Gitgraph>*/}
+    <nav
+      className={`nav hidden h-full min-w-[350px] max-w-[350px] ${center} justify-center overflow-hidden bg-tertiary lg:flex`}
+    >
+      {activeSection === "home" && (
+        <NavHome
+          graphKey={graphKey}
+          options={options}
+          handleClick={handleClick}
+        />
+      )}
+      {activeSection === "projects" && (
+        <NavProjects
+          graphKey={graphKey}
+          options={options}
+          handleClick={handleClick}
+        />
+      )}
+      {activeSection === "cv" && (
+        <NavCv
+          graphKey={graphKey}
+          options={options}
+          handleClick={handleClick}
+        />
+      )}
+      {activeSection === "contact" && (
+        <NavContact
+          graphKey={graphKey}
+          options={options}
+          handleClick={handleClick}
+        />
+      )}
     </nav>
   );
 }

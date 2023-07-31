@@ -124,6 +124,8 @@
 
   .nav {
     border-right: 1px solid #30363D;
+    min-height: calc(100dvh - 95px);
+    max-height: calc(100dvh - 95px);
   }
 
   .box {
@@ -203,10 +205,6 @@
     max-height: calc(100dvh - 95px);
     overflow: auto;
     scroll-snap-type: y mandatory;
-    grid-template-columns: 350px calc(100% - 350px);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0;
-    grid-row-gap: 0;
   }
 
   .scroll-area {
