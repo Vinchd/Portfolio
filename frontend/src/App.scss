@@ -203,6 +203,10 @@
     max-height: calc(100dvh - 95px);
     overflow: auto;
     scroll-snap-type: y mandatory;
+    grid-template-columns: 350px calc(100% - 350px);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
   }
 
   .scroll-area {
@@ -219,7 +223,11 @@
 
   @media (max-width: 768px) {
     .scroll-area {
-      padding: 6rem 0 6rem 0;
+      padding: 6rem 1rem 6rem 1rem;
+
+      .container {
+        gap: 5px;
+      }
     }
   }
 
@@ -229,13 +237,6 @@
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-  }
-
-  .scroll-container {
-    grid-template-columns: 350px calc(100% - 350px);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0;
-    grid-row-gap: 0;
   }
 
   .scroll-container > .nav {

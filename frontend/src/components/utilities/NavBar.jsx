@@ -12,6 +12,7 @@ export default function NavBar() {
       label: {
         display: false,
       },
+      lineWidth: 10,
     },
     commit: {
       message: {
@@ -22,7 +23,7 @@ export default function NavBar() {
       },
       spacing: value,
     },
-    colors: ["#415575", "#238636", "#7699cf", "#565554", "#D81159"],
+    colors: ["#415575", "#238636", "#7699CF", "#565554", "#D81159"],
   });
   const options = {
     author: " ",
@@ -70,46 +71,6 @@ export default function NavBar() {
         {(gitgraph) => {
           const mainBranch = gitgraph.branch("main");
           mainBranch.commit("");
-          const devBranch = gitgraph.branch("dev");
-
-          devBranch.commit("");
-          const featureBranch = gitgraph.branch("feature");
-          featureBranch.commit({
-            subject: "Accueil",
-            onMessageClick() {
-              handleClick("home");
-            },
-          });
-          devBranch.commit({
-            subject: "Projets",
-            onMessageClick() {
-              handleClick("projects");
-            },
-          });
-          featureBranch.commit({
-            subject: "Mon CV",
-            onMessageClick() {
-              handleClick("cv");
-            },
-          });
-          featureBranch.commit({
-            subject: "Contact",
-            onMessageClick() {
-              handleClick("contact");
-            },
-          });
-          // devBranch.merge(featureBranch, "zzz ");
-          devBranch.merge(featureBranch, " ");
-          mainBranch.merge(devBranch, " ");
-
-          mainBranch.commit("");
-          mainBranch.commit("");
-        }}
-      </Gitgraph>
-      {/* <Gitgraph options={options}>
-        {(gitgraph) => {
-          const mainBranch = gitgraph.branch("main");
-          mainBranch.commit("");
           mainBranch.commit("");
           const devBranch = gitgraph.branch("dev");
 
@@ -147,85 +108,126 @@ export default function NavBar() {
           mainBranch.commit("");
         }}
       </Gitgraph>
-      <Gitgraph options={options}>
-        {(gitgraph) => {
-          const mainBranch = gitgraph.branch("main");
-          mainBranch.commit("");
+      {/*<Gitgraph key={graphKey} options={options}>*/}
+      {/*  {(gitgraph) => {*/}
+      {/*    const mainBranch = gitgraph.branch("main");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*    const devBranch = gitgraph.branch("dev");*/}
 
-          const devBranch = gitgraph.branch("dev");
+      {/*    devBranch.commit("");*/}
+      {/*    const featureBranch = gitgraph.branch("feature");*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Accueil",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("home");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    devBranch.commit({*/}
+      {/*      subject: "Projets",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("projects");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Mon CV",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("cv");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Contact",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("contact");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
+      {/*    devBranch.merge(featureBranch, " ");*/}
+      {/*    mainBranch.merge(devBranch, " ");*/}
 
-          devBranch.commit("");
-          const featureBranch = gitgraph.branch("feature");
-          featureBranch.commit({
-            subject: "Accueil",
-            onMessageClick() {
-              handleClick("home");
-            },
-          });
-          devBranch.commit({
-            subject: "Projets",
-            onMessageClick() {
-              handleClick("projects");
-            },
-          });
-          featureBranch.commit({
-            subject: "Mon CV",
-            onMessageClick() {
-              handleClick("cv");
-            },
-          });
-          featureBranch.commit({
-            subject: "Contact",
-            onMessageClick() {
-              handleClick("contact");
-            },
-          });
-          // devBranch.merge(featureBranch, "zzz ");
-          devBranch.merge(featureBranch, " ");
-          mainBranch.merge(devBranch, " ");
+      {/*    mainBranch.commit("");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*  }}*/}
+      {/*</Gitgraph>*/}
+      {/*<Gitgraph options={options}>*/}
+      {/*  {(gitgraph) => {*/}
+      {/*    const mainBranch = gitgraph.branch("main");*/}
+      {/*    mainBranch.commit("");*/}
 
-          mainBranch.commit("");
-          mainBranch.commit("");
-        }}
-      </Gitgraph>
-      <Gitgraph options={options}>
-        {(gitgraph) => {
-          const mainBranch = gitgraph.branch("main");
-          mainBranch.commit("");
-          mainBranch.commit("");
-          const devBranch = gitgraph.branch("dev");
+      {/*    const devBranch = gitgraph.branch("dev");*/}
 
-          devBranch.commit("");
-          const featureBranch = gitgraph.branch("feature");
-          featureBranch.commit({
-            subject: "Accueil",
-            onMessageClick() {
-              handleClick("home");
-            },
-          });
-          devBranch.commit({
-            subject: "Projets",
-            onMessageClick() {
-              handleClick("projects");
-            },
-          });
-          featureBranch.commit({
-            subject: "Mon CV",
-            onMessageClick() {
-              handleClick("cv");
-            },
-          });
-          featureBranch.commit({
-            subject: "Contact",
-            onMessageClick() {
-              handleClick("contact");
-            },
-          });
-          // devBranch.merge(featureBranch, "zzz ");
-          devBranch.merge(featureBranch, " ");
-          mainBranch.merge(devBranch, " ");
-        }}
-      </Gitgraph> */}
+      {/*    devBranch.commit("");*/}
+      {/*    const featureBranch = gitgraph.branch("feature");*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Accueil",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("home");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    devBranch.commit({*/}
+      {/*      subject: "Projets",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("projects");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Mon CV",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("cv");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Contact",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("contact");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
+      {/*    devBranch.merge(featureBranch, " ");*/}
+      {/*    mainBranch.merge(devBranch, " ");*/}
+
+      {/*    mainBranch.commit("");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*  }}*/}
+      {/*</Gitgraph>*/}
+      {/*<Gitgraph options={options}>*/}
+      {/*  {(gitgraph) => {*/}
+      {/*    const mainBranch = gitgraph.branch("main");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*    mainBranch.commit("");*/}
+      {/*    const devBranch = gitgraph.branch("dev");*/}
+
+      {/*    devBranch.commit("");*/}
+      {/*    const featureBranch = gitgraph.branch("feature");*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Accueil",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("home");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    devBranch.commit({*/}
+      {/*      subject: "Projets",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("projects");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Mon CV",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("cv");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    featureBranch.commit({*/}
+      {/*      subject: "Contact",*/}
+      {/*      onMessageClick() {*/}
+      {/*        handleClick("contact");*/}
+      {/*      },*/}
+      {/*    });*/}
+      {/*    // devBranch.merge(featureBranch, "zzz ");*/}
+      {/*    devBranch.merge(featureBranch, " ");*/}
+      {/*    mainBranch.merge(devBranch, " ");*/}
+      {/*  }}*/}
+      {/*</Gitgraph>*/}
     </nav>
   );
 }
