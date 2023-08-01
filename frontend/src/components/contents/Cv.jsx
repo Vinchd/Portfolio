@@ -1,4 +1,5 @@
 import { saveAs } from "file-saver";
+import NavBar from "../utilities/NavBar.jsx";
 
 export default function Cv() {
   const iframeContainerStyle = {
@@ -38,20 +39,23 @@ export default function Cv() {
   };
 
   return (
-    <section id="cv" className="scroll-area">
-      <div className="box flex max-h-[calc(100dvh-226px)] min-h-[calc(100dvh-226px)] w-[60%] min-w-fit flex-col items-center justify-center gap-3 py-3">
-        <div style={iframeContainerStyle}>
-          <iframe
-            loading="lazy"
-            style={iframeStyle}
-            src="https://www.canva.com/design/DAFiQW2naKQ/view?embed"
-            allow="fullscreen"
-          ></iframe>
+    <div className="flex">
+      <NavBar activeSection="cv" center={"items-center"} />
+      <section id="cv" className="scroll-area">
+        <div className="box flex max-h-[calc(100dvh-226px)] min-h-[calc(100dvh-226px)] w-[60%] min-w-fit flex-col items-center justify-center gap-3 py-3">
+          <div style={iframeContainerStyle}>
+            <iframe
+              loading="lazy"
+              style={iframeStyle}
+              src="https://www.canva.com/design/DAFiQW2naKQ/view?embed"
+              allow="fullscreen"
+            ></iframe>
+          </div>
+          <button className="btn" onClick={handleDownload}>
+            Télécharger au format PDF
+          </button>
         </div>
-        <button className="btn" onClick={handleDownload}>
-          Télécharger au format PDF
-        </button>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

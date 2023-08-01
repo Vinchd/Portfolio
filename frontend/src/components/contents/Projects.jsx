@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../utilities/NavBar.jsx";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -40,30 +41,33 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="scroll-area sm:gap-8">
-      <h2>Projets</h2>
-      <div className="container flex flex-col lg:h-[500px] lg:flex-row ">
-        {projects.map((project) => (
-          <Link
-            to={`${project.link}`}
-            key={project.name}
-            className="project-card max-h-[100px] md:max-h-none"
-            target="_blank"
-            style={{
-              backgroundImage: `url(${
-                import.meta.env.VITE_BACKEND_URL
-              }/uploads/${project.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="content">
-              <h2>{project.name}</h2>
-              <span>{project.resume}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+    <div className="flex">
+      <NavBar activeSection="projects" center={"items-center"} />
+      <section id="projects" className="scroll-area sm:gap-8">
+        <h2>Projets</h2>
+        <div className="container flex flex-col lg:h-[500px] lg:flex-row">
+          {projects.map((project) => (
+            <Link
+              to={`${project.link}`}
+              key={project.name}
+              className="project-card max-h-[100px] md:max-h-none"
+              target="_blank"
+              style={{
+                backgroundImage: `url(${
+                  import.meta.env.VITE_BACKEND_URL
+                }/uploads/${project.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="content">
+                <h2>{project.name}</h2>
+                <span>{project.resume}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
