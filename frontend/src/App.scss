@@ -23,18 +23,18 @@
 \* ______________________________________________________________________ */
 
 @layer base {
-  // * {
-  //   box-shadow: 0 0 0 3px red inset;
-  // }
+  * {
+    box-shadow: 0 0 0 3px red inset;
+  }
+
   // header,
   // main,
   // footer {
   //   box-shadow: 0 0 0 3px red inset;
   // }
-  section {
-    box-shadow: 0 0 0 3px red inset;
-  }
-
+  //section {
+  //  box-shadow: 0 0 0 3px red inset;
+  //}
   body {
     background-color: theme("colors.primary");
     color: theme("colors.secondary");
@@ -210,7 +210,7 @@
   .scroll-area {
     min-height: calc(100dvh - 95px);
     max-height: calc(100dvh - 95px);
-    width: 100%;
+    width: calc(100% - 350px);
     padding: 6rem;
     scroll-snap-align: start;
     display: flex;
@@ -219,6 +219,11 @@
     color: white;
   }
 
+  @media (max-width: 1024px) {
+    .scroll-area {
+      width: 100%;;
+    }
+  }
   @media (max-width: 768px) {
     .scroll-area {
       padding: 6rem 1rem 6rem 1rem;
