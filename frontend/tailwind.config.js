@@ -8,7 +8,9 @@ export default {
         secondary: "#E6EDF3",
         tertiary: "#0D1117",
         link: "#2F81F7",
-        button: "#238636",
+        // buttongrey: "#21262D",
+        // buttongreen: "#238636",
+        // textbutton: "#C9D1D9",
       },
 
       fontFamily: {
