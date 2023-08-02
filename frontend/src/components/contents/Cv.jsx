@@ -42,7 +42,7 @@ export default function Cv() {
     <div className="flex">
       <NavBar activeSection="cv" center={"items-center"} />
       <section id="cv" className="scroll-area">
-        <div className="box flex max-h-[calc(100dvh-226px)] min-h-[calc(100dvh-226px)] w-[60%] min-w-fit flex-col items-center justify-center gap-3 py-3">
+        <div className="box flex max-h-[calc(100dvh-226px)] min-h-[calc(100dvh-226px)] w-full min-w-fit max-w-[500px] flex-col items-center justify-center gap-3 py-3">
           <div style={iframeContainerStyle}>
             <iframe
               loading="lazy"

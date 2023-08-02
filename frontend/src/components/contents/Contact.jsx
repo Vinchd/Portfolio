@@ -1,12 +1,23 @@
 import NavBar from "../utilities/NavBar.jsx";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    for (let [name, value] of formData.entries()) {
-      console.log(`${name}: ${value}`);
-    }
+
+    emailjs
+      .sendForm(
+        "service_gn02p9j",
+        "template_e2y8iir",
+        form.current,
+        "IQwJv6XF81ZZMew6w"
+      )
+      .catch((err) => {
+        console.error(err);
+      });
+    e.target.reset();
   };
 
   return (
@@ -16,7 +27,7 @@ export default function Contact() {
         <div className={`box w-full max-w-[500px] overflow-auto p-6`}>
           <h2 className="text-center">Contact</h2>
           <form
-            action=""
+            ref={form}
             name="contactform"
             onSubmit={handleSubmit}
             className="flex w-full flex-col"
