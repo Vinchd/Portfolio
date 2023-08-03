@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        mobile: "520px",
+        // => @media (min-width: 640px) { ... }
+      },
       colors: {
         primary: "#010409",
         secondary: "#E6EDF3",
