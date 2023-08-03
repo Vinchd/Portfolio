@@ -10,7 +10,7 @@ export default function Projects() {
         name: "Ravenfeed",
         resume: "Socialmedia",
         image: "thumbnail_ravenfeed.png",
-        link: "https://github.com/Vinchd/Projet1_Ravenclaw",
+        link: "https://vinchd.github.io/P1-Ravenfeed/",
       },
       {
         name: "Blurtest",
@@ -34,7 +34,7 @@ export default function Projects() {
         name: "Inovin",
         resume: "Support",
         image: "thumbnail_inovin.png",
-        link: "https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P3-Team-Slytherin",
+        link: "https://atelier-inovin.remote-fr-2.wilders.dev/",
       },
     ];
     setProjects(fakedata);
