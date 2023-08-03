@@ -176,8 +176,8 @@
 
   .nav {
     border-right: 1px solid #30363D;
-    min-height: calc(100dvh - 95px);
-    max-height: calc(100dvh - 95px);
+    min-height: calc(100dvh - 96px);
+    max-height: calc(100dvh - 96px);
   }
 
   .box {
@@ -253,15 +253,15 @@
 
   .scroll-container {
     max-width: 100%;
-    min-height: calc(100dvh - 95px);
-    max-height: calc(100dvh - 95px);
+    min-height: calc(100dvh - 96px);
+    max-height: calc(100dvh - 96px);
     overflow: auto;
     scroll-snap-type: y mandatory;
   }
 
   .scroll-area {
-    min-height: calc(100dvh - 95px);
-    max-height: calc(100dvh - 95px);
+    min-height: calc(100dvh - 96px);
+    max-height: calc(100dvh - 96px);
     width: calc(100% - 350px);
     padding: 6rem;
     scroll-snap-align: start;
