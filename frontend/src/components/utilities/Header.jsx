@@ -5,11 +5,8 @@ import { HashLink } from "react-router-hash-link";
 export default function Header() {
   const [active, setActive] = useState("translate-y-[-150%]");
 
-  const handleClick = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleClickLink = () => {
+    setActive("translate-y-[-150%]");
   };
 
   const scrollTop = () => {
@@ -20,10 +17,13 @@ export default function Header() {
   };
   return (
     <>
-      <header className="header sticky top-0 z-20 flex h-24 w-full items-center justify-between bg-primary px-8 py-3">
+      <header className="header sticky top-[-1px] z-20 flex h-24 w-full items-center justify-between bg-primary px-8 py-3">
         <h1
           className="cursor-pointer whitespace-nowrap text-lg sm:text-2xl"
-          onClick={scrollTop}
+          onClick={() => {
+            scrollTop();
+            handleClickLink();
+          }}
         >
           Vincent Daviaud
         </h1>
@@ -135,16 +135,16 @@ export default function Header() {
         className={`${active} menu absolute right-0 top-[96px] z-10 w-[150px] rounded-bl-md bg-secondary text-center text-primary lg:hidden`}
       >
         <ul className="my-6 flex flex-col gap-6">
-          <HashLink to="#home" smooth>
+          <HashLink to="#home" onClick={handleClickLink} smooth>
             <li>Accueil</li>
           </HashLink>
-          <HashLink to="#projects" smooth>
+          <HashLink to="#projects" onClick={handleClickLink} smooth>
             <li>Projets</li>
           </HashLink>
-          <HashLink to="#cv" smooth>
+          <HashLink to="#cv" onClick={handleClickLink} smooth>
             <li>Mon CV</li>
           </HashLink>
-          <HashLink to="#contact" smooth>
+          <HashLink to="#contact" onClick={handleClickLink} smooth>
             <li>Contact</li>
           </HashLink>
         </ul>

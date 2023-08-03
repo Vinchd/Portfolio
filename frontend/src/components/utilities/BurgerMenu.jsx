@@ -4,9 +4,6 @@ export default function BurgerMenu({ active, setActive }) {
       active === "translate-y-[-150%]" ? "translate-y-0" : "translate-y-[-150%]"
     );
   };
-  const handleClickLink = () => {
-    setActive("");
-  };
 
   return (
     <>
