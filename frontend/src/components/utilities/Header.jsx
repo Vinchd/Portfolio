@@ -132,19 +132,39 @@ export default function Header() {
         </button>
       </header>
       <nav
-        className={`${active} menu absolute right-0 top-[96px] z-10 w-[150px] rounded-bl-md bg-secondary text-center text-primary lg:hidden`}
+        className={`${active} menu absolute right-0 top-[96px] z-10 w-[200px] rounded-bl-md bg-tertiary text-center text-secondary lg:hidden`}
       >
-        <ul className="my-6 flex flex-col gap-6">
-          <HashLink to="#home" onClick={handleClickLink} smooth>
+        <ul className="my-4 flex flex-col">
+          <HashLink
+            to="#home"
+            onClick={handleClickLink}
+            className="flex h-16 w-full items-center justify-center"
+            smooth
+          >
             <li>Accueil</li>
           </HashLink>
-          <HashLink to="#projects" onClick={handleClickLink} smooth>
+          <HashLink
+            to="#projects"
+            onClick={handleClickLink}
+            className="flex h-16 w-full items-center justify-center"
+            smooth
+          >
             <li>Projets</li>
           </HashLink>
-          <HashLink to="#cv" onClick={handleClickLink} smooth>
+          <HashLink
+            to="#cv"
+            onClick={handleClickLink}
+            className="flex h-16 w-full items-center justify-center"
+            smooth
+          >
             <li>Mon CV</li>
           </HashLink>
-          <HashLink to="#contact" onClick={handleClickLink} smooth>
+          <HashLink
+            to="#contact"
+            onClick={handleClickLink}
+            className="flex h-16 w-full items-center justify-center"
+            smooth
+          >
             <li>Contact</li>
           </HashLink>
         </ul>
