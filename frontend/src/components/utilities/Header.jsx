@@ -127,7 +127,13 @@ export default function Header() {
           </li>
         </ul>
         <BurgerMenu active={active} setActive={setActive} />
-        <button type="button" hidden>
+        <button
+          type="button"
+          hidden
+          onClick={() =>
+            window.open("https://www.youtube.com/shorts/SXHMnicI6Pg", "_blank")
+          }
+        >
           Admin
         </button>
       </header>

@@ -36,7 +36,7 @@ export default function Home() {
       <NavBar activeSection="home" />
       <section id="home" className="scroll-area gap-6">
         {/*Card droite text presentation. Card gauche parcours/compétences avec nombre infini*/}
-        <div className="text-justify leading-8 max-mobile:text-xs">
+        <div className="flex flex-col gap-6 text-justify leading-8 max-mobile:text-[12px] max-mobile:leading-5">
           <div className="flex items-center justify-center gap-5">
             <div className="w-2/3">
               Bienvenue sur mon Portfolio, je m'appel Vincent et je suis
