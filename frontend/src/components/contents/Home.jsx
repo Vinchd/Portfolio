@@ -92,7 +92,7 @@ export default function Home() {
             <div className="w-2/3">
               Après m'être pris de passion pour la programmation, je me suis
               formé à la WildCodeSchool ayant pour but d'en faire mon métier.{" "}
-              <animated.div className="inline">
+              <animated.div className="inline-block w-[35px] max-mobile:w-[26px]">
                 {number.to((n) => n.toFixed(0))}
               </animated.div>{" "}
               mercis à Anthony Gorski et à tous mes collègues pour cette
