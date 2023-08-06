@@ -1,26 +1,54 @@
 import GitHubCalendar from "react-github-calendar";
 import Tilt from "react-parallax-tilt";
+import { useEffect, useState } from "react";
+import { animated, useSpring } from "@react-spring/web";
 import NavBar from "../utilities/NavBar.jsx";
 
 export default function Home() {
+  const [resetCounter, setResetCounter] = useState(false);
+
+  const { number } = useSpring({
+    from: { number: 100 },
+    to: { number: resetCounter ? 100 : 1000 },
+    delay: 800,
+    config: { mass: 1, tension: 20, friction: 20 },
+    reset: resetCounter,
+  });
+
+  useEffect(() => {
+    if (!resetCounter) {
+      const timeoutId = setTimeout(() => {
+        setResetCounter(true);
+      }, 10000);
+
+      return () => clearTimeout(timeoutId);
+    }
+    if (resetCounter) {
+      const timeoutId = setTimeout(() => {
+        setResetCounter(false);
+      }, 200);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [resetCounter]);
   return (
     <div className="flex">
       <NavBar activeSection="home" />
       <section id="home" className="scroll-area gap-6">
         {/*Card droite text presentation. Card gauche parcours/compétences avec nombre infini*/}
-        <div>
+        <div className="text-justify leading-8 max-mobile:text-xs">
           <div className="flex items-center justify-center gap-5">
-            <p className="w-2/3">
+            <div className="w-2/3">
               Bienvenue sur mon Portfolio, je m'appel Vincent et je suis
               développeur Web junior à la recherche d'une alternance d'une durée
               d'un an.
-            </p>
+            </div>
             <Tilt
-              className="parallax-effect-glare-scale"
+              className="parallax-effect-glare-scale sm:p-[24px]"
               perspective={500}
               glareEnable={true}
               glareMaxOpacity={0.45}
-              glareBorderRadius="6px"
+              glareBorderRadius="4px"
               gyroscope={true}
             >
               <div className="inner-element">
@@ -61,17 +89,21 @@ export default function Home() {
             </Tilt>
           </div>
           <div className="flex flex-row-reverse items-center justify-center gap-5">
-            <p className="w-2/3">
-              Bienvenue sur mon Portfolio, je m'appel Vincent et je suis
-              développeur Web junior à la recherche d'une alternance d'une durée
-              d'un an.
-            </p>
+            <div className="w-2/3">
+              Après m'être pris de passion pour la programmation, je me suis
+              formé à la WildCodeSchool ayant pour but d'en faire mon métier.{" "}
+              <animated.div className="inline">
+                {number.to((n) => n.toFixed(0))}
+              </animated.div>{" "}
+              mercis à Anthony Gorski et à tous mes collègues pour cette
+              expérience et ces moments passés.
+            </div>
             <Tilt
-              className="parallax-effect-glare-scale"
+              className="parallax-effect-glare-scale sm:p-[24px]"
               perspective={500}
               glareEnable={true}
               glareMaxOpacity={0.45}
-              glareBorderRadius="6px"
+              glareBorderRadius="4px"
               gyroscope={true}
             >
               <div className="inner-element">
