@@ -53,9 +53,7 @@ export default function Projects() {
               className="project-card max-h-[100px] md:max-h-none"
               target="_blank"
               style={{
-                backgroundImage: `url(${
-                  import.meta.env.VITE_BACKEND_URL
-                }/uploads/${project.image})`,
+                backgroundImage: `url(/assets/projects_thumbnails/${project.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
