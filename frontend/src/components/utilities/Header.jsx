@@ -19,7 +19,7 @@ export default function Header() {
     <>
       <header className="header sticky top-[-1px] z-20 flex h-24 w-full items-center justify-between bg-primary px-8 py-3">
         <h1
-          className="cursor-pointer whitespace-nowrap text-lg sm:text-2xl"
+          className="cursor-pointer whitespace-nowrap text-lg mobile:text-2xl"
           onClick={() => {
             scrollTop();
             handleClickLink();
