@@ -1,6 +1,8 @@
-import NavBar from "../utilities/NavBar.jsx";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import NavBar from "../utilities/NavBar.jsx";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Contact() {
   const form = useRef();
@@ -14,9 +16,31 @@ export default function Contact() {
         form.current,
         "IQwJv6XF81ZZMew6w"
       )
+      .then(() => {
+        toast.success("Message envoyé ✉️", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      })
       .catch((err) => {
-        console.error(err);
+        toast.error(`Erreur d'envoi ⚠️ ${err}`, {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       });
+
     e.target.reset();
   };
 

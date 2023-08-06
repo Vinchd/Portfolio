@@ -10,7 +10,7 @@ export default function Projects() {
         name: "Ravenfeed",
         resume: "Socialmedia",
         image: "thumbnail_ravenfeed.png",
-        link: "https://github.com/Vinchd/Projet1_Ravenclaw",
+        link: "https://vinchd.github.io/P1-Ravenfeed/",
       },
       {
         name: "Blurtest",
@@ -34,7 +34,7 @@ export default function Projects() {
         name: "Inovin",
         resume: "Support",
         image: "thumbnail_inovin.png",
-        link: "https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P3-Team-Slytherin",
+        link: "https://atelier-inovin.remote-fr-2.wilders.dev/",
       },
     ];
     setProjects(fakedata);
@@ -45,7 +45,7 @@ export default function Projects() {
       <NavBar activeSection="projects" center={"items-center"} />
       <section id="projects" className="scroll-area sm:gap-8">
         <h2>Projets</h2>
-        <div className="container flex flex-col lg:h-[500px] lg:flex-row">
+        <div className="container flex flex-col xl:h-[500px] xl:flex-row">
           {projects.map((project) => (
             <Link
               to={`${project.link}`}
@@ -53,9 +53,7 @@ export default function Projects() {
               className="project-card max-h-[100px] md:max-h-none"
               target="_blank"
               style={{
-                backgroundImage: `url(${
-                  import.meta.env.VITE_BACKEND_URL
-                }/uploads/${project.image})`,
+                backgroundImage: `url(/assets/projects_thumbnails/${project.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

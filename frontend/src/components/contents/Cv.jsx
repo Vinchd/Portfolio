@@ -25,7 +25,7 @@ export default function Cv() {
   };
 
   const pdfFileName = "CV_VincentD.pdf";
-  const pdfPath = `${import.meta.env.VITE_BACKEND_URL}/uploads/${pdfFileName}`;
+  const pdfPath = `/assets/${pdfFileName}`;
 
   const handleDownload = () => {
     fetch(pdfPath)
