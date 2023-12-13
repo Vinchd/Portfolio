@@ -34,7 +34,7 @@ export default function Projects() {
         name: "Inovin",
         resume: "Support",
         image: "thumbnail_inovin.png",
-        link: "https://atelier-inovin.remote-fr-2.wilders.dev/",
+        link: "https://github.com/Vinchd/P3-Inovin",
       },
     ];
     setProjects(fakedata);
