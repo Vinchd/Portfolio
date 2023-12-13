@@ -16,7 +16,7 @@ export default function Projects() {
         name: "Blurtest",
         resume: "Minigame",
         image: "thumbnail_blurtest.png",
-        link: "https://blurtest.remote-fr-2.wilders.dev/",
+        link: "https://blurtestp2.vercel.app/",
       },
       {
         name: "Choîxteau",
