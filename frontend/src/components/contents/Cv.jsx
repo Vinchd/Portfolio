@@ -47,7 +47,7 @@ export default function Cv() {
             <iframe
               loading="lazy"
               style={iframeStyle}
-              src="https://www.canva.com/design/DAFiQW2naKQ/view?embed"
+              src="https://www.canva.com/design/DAGY7sLmj68/ei_dQbwhZfMN4AHRNMcvgg/view?embed"
               allow="fullscreen"
             ></iframe>
           </div>
