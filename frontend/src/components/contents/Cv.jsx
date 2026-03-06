@@ -25,7 +25,7 @@ export default function Cv() {
 	};
 
 	const pdfsource =
-		"https://www.canva.com/design/DAGi19YEbn0/icbOE8hJ4TqxIsvUsJj9Ow/view?embed";
+		"https://www.canva.com/design/DAHA8xXJH-0/VluxvRoFGJiIDjwz7EbWwA/view?embed";
 	const pdfFileName = "CV_VincentD.pdf";
 	const pdfPath = `/assets/${pdfFileName}`;
 
@@ -44,7 +44,7 @@ export default function Cv() {
 		<div className="flex">
 			<NavBar activeSection="cv" center={"items-center"} />
 			<section id="cv" className="scroll-area">
-				<div className="box flex max-h-[calc(100dvh-226px)] min-h-[calc(100dvh-226px)] w-full min-w-fit max-w-[500px] flex-col items-center justify-center gap-3 py-3">
+				<div className="flex flex-col justify-center items-center gap-3 py-3 w-full min-w-fit max-w-[500px] min-h-[calc(100dvh-226px)] max-h-[calc(100dvh-226px)] box">
 					<div style={iframeContainerStyle}>
 						<iframe
 							title="CV"

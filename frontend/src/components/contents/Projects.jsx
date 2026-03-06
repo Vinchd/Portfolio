@@ -7,10 +7,16 @@ export default function Projects() {
   useEffect(() => {
     const fakedata = [
       {
-        name: "Ravenfeed",
-        resume: "Socialmedia",
-        image: "thumbnail_ravenfeed.png",
-        link: "https://vinchd.github.io/P1-Ravenfeed/",
+        name: "Le Café du Château",
+        resume: "Landingpage",
+        image: "thumbnail_cafechateau.png",
+        link: "https://www.lecafeduchateau.fr/",
+      },
+      {
+        name: "Tempête",
+        resume: "Landingpage",
+        image: "thumbnail_tempete.png",
+        link: "https://www.tempeteparis.fr/",
       },
       {
         name: "Blurtest",
@@ -36,6 +42,7 @@ export default function Projects() {
         image: "thumbnail_inovin.png",
         link: "https://github.com/Vinchd/P3-Inovin",
       },
+      
     ];
     setProjects(fakedata);
   }, []);
@@ -43,14 +50,14 @@ export default function Projects() {
   return (
     <div className="flex">
       <NavBar activeSection="projects" center={"items-center"} />
-      <section id="projects" className="scroll-area sm:gap-8">
+      <section id="projects" className="sm:gap-8 scroll-area">
         <h2>Projets</h2>
-        <div className="container flex flex-col xl:h-[500px] xl:flex-row">
+        <div className="flex xl:flex-row flex-col xl:h-[500px] container">
           {projects.map((project) => (
             <Link
               to={`${project.link}`}
               key={project.name}
-              className="project-card max-h-[100px] md:max-h-none"
+              className="max-h-[100px] md:max-h-none project-card"
               target="_blank"
               style={{
                 backgroundImage: `url(/assets/projects_thumbnails/${project.image})`,
